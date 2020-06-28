@@ -78,23 +78,27 @@ function compareCards() {
   let cardsInPlay = player1.deck.shift() + player2.deck.shift;
 }
 
-// function playRound() {
-//   player1.deck.shift();
-//   console.log;
+var cardsOnTable = (player2.deck.splice(0,4)).concat(player1.deck.splice(0,4))
+// define the itsWar() function
+function itsWar(i) {
+  if (player1.deck[i].value > player2.deck[i].value) {
+    cardsOnTable[]; //i dont understand//
+    console.log("player1 wins");
+  } else if (player2.deck[i].value > player1.deck[i].value) {
+    player2.deck.push(player1.deck.splice(0,4));
+    console.log("player2 wins");
+}
 
 //if player 1 card value is higher than the player 2 card value, player  1 wins
 if (player1.deck[i].value > player2.deck[i].value) {
   //pushes winning cards to the bottom of the winning deck, take cards away from losing deck
-  player2.deck.shift();
   player1.deck.push(player2.deck.shift());
   console.log("player1 wins");
 } else if (player2.deck[i].value > player1.deck[i].value) {
-  player1.deck.shift();
   player2.deck.push(player1.deck.shift());
   console.log("player2 wins");
 } else (player1.deck[i].value === player2.deck[i].value) {
-  function itsWar() {
-    
+   itsWar();
   }
 }
 
