@@ -83,20 +83,31 @@ function compareCards() {
 //   console.log;
 
 //if player 1 card value is higher than the player 2 card value, player  1 wins
-//   if (player1 % 13 > player2 % 13) {
-//     //pushes current cards from each deck to the back of the player's deck
-//     player2.deck.pop();
-//     player1.push();
-//     //removes current card from the front of each deck
-//     playerHand.shift();
-//     compHand.shift();
-//     //update card counts and check for a winner
-//     updateCount();
-//     checkWin();
-//   }
-// }
+if (player1.deck[i].value > player2.deck[i].value) {
+  //pushes winning cards to the bottom of the winning deck, take cards away from losing deck
+  player2.deck.shift();
+  player1.deck.push(player2.deck.shift());
+  console.log("player1 wins");
+} else if (player2.deck[i].value > player1.deck[i].value) {
+  player1.deck.shift();
+  player2.deck.push(player1.deck.shift());
+  console.log("player2 wins");
+} else (player1.deck[i].value === player2.deck[i].value) {
+  function itsWar() {
+    
+  }
+}
+
+//removes current card from the front of each deck
+
+//update card counts and check for a winner
 
 /*function to load when the window is open*/
-window.onload = shuffle(deck);
+// window.onload
+shuffle(deck);
 splitDeck(deck);
-compareCards();
+// compareCards();
+let player1Card = player1.deck.shift();
+let player2Card = player2.deck.shift();
+
+// cardsInPlay = (player1Card, player2Card);
